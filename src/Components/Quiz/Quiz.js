@@ -3,8 +3,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 const Quiz = ({ quiz }) => {
-    const { name, logo, } = quiz;
-  
+
+    const { name, logo, id } = quiz
 
     return (
         <div>
@@ -13,8 +13,7 @@ const Quiz = ({ quiz }) => {
                 <Card.Img variant="top" src={logo} ></Card.Img>
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
-                    
-                <Button><Link to={`/questions`}>Start Quiz</Link></Button>   
+                    <Button><Link to={`/quiz/${id}`}>Start Quiz</Link></Button>
                 </Card.Body>
             </Card>
         </div>

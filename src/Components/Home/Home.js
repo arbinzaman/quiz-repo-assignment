@@ -4,7 +4,8 @@ import Quiz from '../Quiz/Quiz';
 
 const Home = () => {
 
-    const quizes = useLoaderData();
+    const quizes = useLoaderData()
+
     return (
         <div className='container ' >
             <header>
@@ -19,22 +20,15 @@ const Home = () => {
                 </div>
             </header>
             <section>
-
+                <div >
+                    {
+                        quizes?.data.map(quiz => <Quiz
+                            key={quiz.id}
+                            quiz={quiz}
+                        ></Quiz>)
+                    }
+                </div>
             </section>
-
-
-  
-
-
-            <div >
-
-                {
-                    quizes.data.map(quiz => <Quiz
-                        key={quizes.data.id}
-                        quiz={quiz}
-                    ></Quiz>)
-                }
-            </div>
         </div>
 
     );
